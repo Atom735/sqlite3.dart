@@ -25,6 +25,10 @@ abstract class Database {
   /// statement.
   int getUpdatedRows();
 
+  void addCallback(void Function(SqliteUpdate) callback);
+
+  void removeCallback(void Function(SqliteUpdate) callback);
+
   /// An async stream of data changes happening on this database.
   ///
   /// Listening to this stream will register an "update hook" on the native

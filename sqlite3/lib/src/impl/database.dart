@@ -92,6 +92,14 @@ class DatabaseImpl implements Database {
   }
 
   @override
+  void addCallback(void Function(SqliteUpdate) callback) =>
+      _updates.addCallback(callback);
+
+  @override
+  void removeCallback(void Function(SqliteUpdate) callback) =>
+      _updates.removeCallback(callback);
+
+  @override
   Stream<SqliteUpdate> get updates => _updates.updates;
 
   @override
